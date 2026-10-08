@@ -53,7 +53,7 @@ class Http {
         if (url === URL_AUTH.LOGIN || url === URL_AUTH.REGISTER) {
           this.accessToken = (response.data as IAuthResponse).data.access_token
           this.refreshToken = (response.data as IAuthResponse).data.refresh_token
-          saveAccessTokenToLocalStorage(this.accessToken)
+          saveAccessTokenToLocalStorage(this.accessToken);
           saveRefreshTokenToLocalStorage(this.refreshToken)
           saveProfileToLocalStorage(response.data.data.user)
         } else if (url === URL_AUTH.LOG_OUT) {
